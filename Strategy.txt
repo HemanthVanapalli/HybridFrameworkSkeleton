@@ -1,0 +1,40 @@
+Creating a framework includes 3 phases:
+Phase 1: Development
+
+1. Create MAVEN project.
+2. Update pom.xml
+3. Create Page objects.
+4. Create basic test case.
+5. Add logs to the test case.
+6. Read common values from properties file.
+7. Run test case on desired browser.
+8. Add extent report.
+9. Create Data druven test case.
+10. Adding new test case.
+
+Phase 2: Execution
+1. Run test cases with pom.xml.
+2. Run test cases through mvn cli.(Command line interface).
+3. Run cases using .bat file.
+4. Run cases uing Jenkins(using bat file).
+
+Phase 3: Maintanance.
+1. Creating repository in GITHUB.
+2. Commit project code in local repo.
+3. Push the project code to GITHUB remote form local GIT repo.
+
+-----------------------------------------------------------
+Run from CLI:
+command : mvn clean install
+-----------------------------------------------------------
+Run from pom.xml
+1. add maven compiler plugin
+2. add maven surefire plugin
+-----------------------------------------------------------
+Run from .bat file
+-----------------------------------------------------------
+Run from Jenkins
+1. add GIT repository link to jenkins job.
+2. add maven cli to job.
+
+

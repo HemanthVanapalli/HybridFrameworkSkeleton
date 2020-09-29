@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="basePath">Logs</Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile name="fileLogger" fileName="${basePath}/test.log"
+                     filePattern="${basePath}/test-info-%d{yyyy-MM-dd}.log" ignoreExceptions="false">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} [%t] %c{1} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.base.BaseClass" level="debug" additivity="true">
+            <appender-ref ref="fileLogger" level="debug"/>
+        </Logger>
+        <Logger name="com.pageObjects" level="debug" additivity="true">
+            <appender-ref ref="fileLogger" level="debug"/>
+        </Logger>
+        <Logger name="com.testCases" level="debug" additivity="true">
+            <appender-ref ref="fileLogger" level="debug"/>
+        </Logger>
+        <Root level="debug" additivity="false">
+            <appender-ref ref="console"/>
+            <!-- <appender-ref ref="fileLogger"/>-->
+        </Root>
+    </Loggers>
+</Configuration>
